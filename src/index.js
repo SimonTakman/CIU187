@@ -7,8 +7,9 @@
 import './index.scss';
 import startQuagga from './quaggaFunctions';
 import generateRandomD3Chart from './d3Functions';
-
+import fetchData from './apiFunctions'
 //document.getElementById('root').innerHTML =generateRandomD3Chart();
 
-generateRandomD3Chart();
+//generateRandomD3Chart();
 
+fetchData("05701211012923");
