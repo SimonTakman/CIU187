@@ -1,4 +1,4 @@
-# Webpack ES6 boilerplate
+# Webpack ES6 boilerplatee
 
 [![tests][tests]][tests-url]
 [![coverage][cover]][cover-url]
