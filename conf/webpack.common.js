@@ -62,7 +62,8 @@ module.exports = {
             // use style-loader in development
             fallback: "style-loader"
         })
-    }]
+    }
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist'], {root: process.cwd()}),

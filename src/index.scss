@@ -40,9 +40,10 @@
 // --------------------------------------
 // Color
 // --------------------------------------
-$black: 	#000000;
-$grey: 		#212121;
-$sky-blue: 	#81DAF5;
+$black: 		#000000;
+$grey: 			#212121;
+$sky-blue: 		#81DAF5;
+$light-green: 	#daf6cc;
 
 
 // --------------------------------------
@@ -58,30 +59,17 @@ body {
 	display: block;
 	width: 100vw;
 	height: auto;
-	text-align:center;
-	 
-	background-color: $sky-blue;
 
-	background: url(https://dl.dropboxusercontent.com/s/umm6eiyqwvao5pu/pexels-photo-94438.jpg?dl=0) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	background-color: $light-green;
+
+	// background: url(https://dl.dropboxusercontent.com/s/umm6eiyqwvao5pu/pexels-photo-94438.jpg?dl=0) no-repeat center center fixed; 
+	// background-size: cover;
 
 	@include media-breakpoint-up(sm) {
   	}
 
 
 	}
-
-// #wrapper
-// 	{
-// 	 text-align:center;
-// 	 margin:0 auto;
-// 	 padding:0px;
-// 	 width:995px;
-// 	}
-
 	
 
 
@@ -90,16 +78,29 @@ body {
 // --------------------------------------
 h1,h2,h3,h4,a,p {
 	font-family: 'Roboto', sans-serif;
+	
+}
+
+h1 {
+	font-size:4rem;
 	color: $black;
 }
 
-h1
-	{
-	 
-	 margin-top:150px;	
-	 color:white;
-	 font-size:45px;
-	}
+// h2 {
+// 	font-size:3rem;
+// 	color: $black;
+// }
+
+// h3 {
+	
+// 	font-size:1.5rem;
+// 	color: $black;
+// }
+
+// h4 {
+// 	font-size:1rem;
+// 	color: $black;
+// }
 
 
 
@@ -109,16 +110,33 @@ h1
 // --------------------------------------
 
 .navigation {
-	@include media-breakpoint-up(sm) {
- 		position: fixed;
- 		display: block;
-  	}
-
-
+	position: fixed;
+ 	display: block;
+ 	width: 100vw;
+ 	height: auto;
+ 	z-index: 999;
+ 	padding: 2rem;
+	
 }
 
 .navigation--containter {
+	position: relative;
+	display: block;
 
+}
+
+.navigation--containter--items {
+
+}
+
+.navigation--containter--items--item {
+	text-align: center;
+	&:first-child {
+		text-align: left;
+	}
+	&:last-child {
+		text-align: right;
+	}
 }
 
 
@@ -127,7 +145,11 @@ h1
 // --------------------------------------
 
 .main {
-
+	position: relative;
+	display: block;
+	width: 100vw;
+	height: 100%;
+	padding-top: 44px;
 }
 
 .main--contianter {
@@ -136,13 +158,77 @@ h1
 
 
 // --------------------------------------
+// Logo
+// --------------------------------------
+.logo {
+	position: relative;
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding-top: 3rem;
+}
+
+.logo--continer {
+	
+
+}
+
+
+// --------------------------------------
+// Scanner
+// --------------------------------------
+.scanner {
+	position: relative;
+	display: block;	
+	margin: 0 auto;
+	margin-top: 2rem;
+	
+	width: 80%;
+	// background-image: url('./assets/img/ex-scann.jpg');
+	// background-repeat: no-repeat;
+	// background-size: cover;
+	// background-position: center center;
+	
+	&:after {
+	  content: "";
+	  display: block;
+	  padding-bottom: 100%;
+
+	}
+}
+
+// --------------------------------------
+// Configurator
+// --------------------------------------
+.config {
+	position: relative;
+	display: block;
+	padding: 2rem;
+}
+
+.config--container {
+	text-align: left
+}
+
+
+
+
+
+// --------------------------------------
 // footer
 // --------------------------------------
 
 .footer {
+	position: fixed;
+ 	display: block;
+ 	width: 100vw;
+ 	bottom: 0;
+ 	padding: 1rem;
+ 	
 
 }
 
 .footer--container {
+
 
 }
