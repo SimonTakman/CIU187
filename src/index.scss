@@ -39,11 +39,7 @@ body
 
 .navigation {
 	
-	@include media-breakpoint-up(sm) {
-		position: fixed;
-		display: block;
 
-	}
 }
 
 .navigation--containter {
