@@ -37,6 +37,7 @@
     "babel-loader": "7.1.2",
     "babel-plugin-transform-flow-comments": "^6.22.0",
     "babel-preset-env": "1.6.0",
+    "bootstrap": "^4.0.0-beta",
     "clean-webpack-plugin": "0.1.16",
     "css-loader": "^0.28.5",
     "eslint": "4.5.0",
