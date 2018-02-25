@@ -19,8 +19,8 @@ import startScandit from './barcodeScanner'
 //fetchData("05701211012923");
 
 
-startScandit();
-document.getElementById("submitBtn").addEventListener("click", fetchProduct);
+//startScandit();
+document.getElementById("submitBtn").addEventListener("click", startScandit);
 
 
 //File loader
