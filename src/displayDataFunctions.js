@@ -1,5 +1,6 @@
 import fetchData from './apiFunctions';
 import startScandit from './barcodeScanner';
+import * as THREE from 'three';
 
 export default function fetchProduct(gtin){
 console.log("here i am");
@@ -43,27 +44,46 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
 			document.getElementById("product_title").innerHTML = "Title: " + res.Artikelbenamning;
       //Need to check if we have an image, otherwise it will not be able to this below.
       document.getElementById("product_image_url").innerHTML = "URL: " + res.Bilder[0].Lank;
-      document.getElementById("nutri_fact").innerHTML = "Nutrision facts: " + res.Ingrediensforteckning;
+      document.getElementById("nutri_fact").innerHTML = "Nutrition facts: " + res.Ingrediensforteckning;
       document.getElementById("mainView").setAttribute("style", "display:none;");
       let prodImage = document.createElement("img");
-      let aImage = document.createElement("a-plane");
+      let aImage = document.createElement("a-image");
       let prodName = document.createElement("a-text");
       //TODO: Have some issues with utf-8
-      _tmpTex.generateMipmaps = false;
-      _tmpTex.minFilter = THREE.LinearFilter;
-      _tmpTex.magFilter = THREE.LinearFilter;
+      
+      var loader = new THREE.ImageLoader();
+      let canvas;
+      loader.load(
+        proxyurl + res.Bilder[0].Lank,
+        function (image){
+          canvas = document.createElement('canvas');
+          canvas.setAttribute("width", "1000");
+          canvas.setAttribute("height", "1000");
+          canvas.setAttribute("id", "prod_image") 
+          var context = canvas.getContext('2d');
+          context.drawImage(image, 100, 100);
+        },
+        undefined,
+        function (){
+          console.error("An error happened");
+        }
+      )
+
+
       prodName.setAttribute("value", res.Artikelbenamning);
       prodImage.setAttribute("id", "product_image");
       prodImage.setAttribute("src", proxyurl + res.Bilder[0].Lank);
-      aImage.setAttribute("src", "product_image");
+      aImage.setAttribute("src", "#prod_image");
       aImage.setAttribute("width", "500");
       aImage.setAttribute("height", "500");
-      document.getElementById("aFrameAssets").appendChild(prodImage);
-      document.getElementById("aScenen").appendChild(prodName);
       setTimeout(() => {
-        document.getElementById("aScenen").appendChild(aImage);
+        document.getElementById("aScenen").appendChild(canvas);
         document.getElementById("aFrameView").setAttribute("style", "display:block;");
-      } ,1000);
+      
+      }, 1000)
+      //document.getElementById("aFrameAssets").appendChild(canvas);
+      //document.getElementById("aScenen").appendChild(prodName);
+      
       
       //startScandit();
 		
