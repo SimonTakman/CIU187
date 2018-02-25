@@ -10,7 +10,7 @@ import startQuagga from './quaggaFunctions';
 import generateRandomD3Chart from './d3Functions';
 import {fetchData, fetchProduct} from './apiFunctions';
 import containingAlergy from './js/filter';
-import startScanner from './barcodeScanner'
+import startScandit from './barcodeScanner'
 //import parser from 'xml2json';
 //document.getElementById('root').innerHTML =generateRandomD3Chart();
 
@@ -19,7 +19,7 @@ import startScanner from './barcodeScanner'
 //fetchData("05701211012923");
 
 
-startScanner();
+startScandit();
 document.getElementById("submitBtn").addEventListener("click", fetchProduct);
 
 

@@ -1,4 +1,5 @@
 import fetchData from './apiFunctions';
+import startScandit from './barcodeScanner';
 
 export default function fetchProduct(gtin){
 console.log("here i am");
@@ -38,10 +39,11 @@ console.log("here i am");
 			}else{
 				document.getElementById("alergy").innerHTML = "Contains Alergy: "+ "YES! " + arr.toString();
 			}
-
 			document.getElementById("product_title").innerHTML = "Title: " + res.Artikelbenamning;
-			document.getElementById("product_image_url").innerHTML = "URL: " + res.Bilder[0].Lank;
-			document.getElementById("nutri_fact").innerHTML = "Nutrision facts: " + res.Ingrediensforteckning;
+      //Need to check if we have an image, otherwise it will not be able to this below.
+      document.getElementById("product_image_url").innerHTML = "URL: " + res.Bilder[0].Lank;
+      document.getElementById("nutri_fact").innerHTML = "Nutrision facts: " + res.Ingrediensforteckning;
+      startScandit();
 		
 		//console.log(document.getElementById("checkbox_milk").checked);
 		//document.getElementById("alergy").innerHTML = "Contains Alergy: "+ "NO!";

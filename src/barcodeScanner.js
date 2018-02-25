@@ -18,6 +18,8 @@ export default function startScandit() {
     barcodePicker.onScan(function(scanResult) {
         console.log(scanResult.barcodes[0].data);
         fetchProduct(scanResult.barcodes[0].data);
+        barcodePicker.destroy();
+        
       //alert(scanResult.barcodes.reduce(function(string, barcode) {
         //return string + ScanditSDK.Barcode.Symbology.toHumanizedName(barcode.symbology) + ": " + barcode.data + "\n";
       //}, ""));
