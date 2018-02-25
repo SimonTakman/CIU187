@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/history</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/history">
+            <g id="Timeline">
+                <g id="Group" transform="translate(3.840000, 3.840000)" fill="#000000">
+                    <path d="M8.64,9.6 L12,9.6 L12,7.68 L8.64,7.68 L8.64,4.32 L6.72,4.32 L6.72,9.6 L8.64,9.6 Z M16.32,8.16 C16.32,12.6671583 12.6657391,16.32 8.16,16.32 C3.65213217,16.32 0,12.6671583 0,8.16 C0,3.65284174 3.65213217,0 8.16,0 C12.6657391,0 16.32,3.65284174 16.32,8.16 Z" id="Shape"></path>
+                </g>
+                <rect id="Bounds" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

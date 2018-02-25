@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/filter</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/filter">
+            <g id="Group-3" transform="translate(2.000000, 3.000000)">
+                <rect id="Shape" fill="#000000" transform="translate(15.280000, 15.960000) rotate(-450.000000) translate(-15.280000, -15.960000) " x="13.6" y="14.52" width="3.36" height="2.88"></rect>
+                <rect id="Shape-Copy-2" fill="#000000" transform="translate(15.280000, 4.680000) rotate(-450.000000) translate(-15.280000, -4.680000) " x="10.96" y="3.24" width="8.64" height="2.88"></rect>
+                <rect id="Shape" fill="#000000" transform="translate(5.200000, 2.520000) rotate(-450.000000) translate(-5.200000, -2.520000) " x="3.04" y="1.08" width="4.32" height="2.88"></rect>
+                <rect id="Shape-Copy" fill="#000000" transform="translate(5.200000, 13.820000) rotate(-450.000000) translate(-5.200000, -13.820000) " x="1.38" y="12.38" width="7.64" height="2.88"></rect>
+                <rect id="Oval" stroke="#000000" stroke-width="2.4" transform="translate(15.280000, 10.920000) rotate(-180.000000) translate(-15.280000, -10.920000) " x="12.16" y="7.8" width="6.24" height="6.24" rx="3.12"></rect>
+                <rect id="Oval" stroke="#000000" stroke-width="2.4" transform="translate(5.200000, 7.080000) rotate(-180.000000) translate(-5.200000, -7.080000) " x="2.08" y="3.96" width="6.24" height="6.24" rx="3.12"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

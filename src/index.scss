@@ -41,6 +41,7 @@
 // Color
 // --------------------------------------
 $black: 		#000000;
+$white:			#ffffff;
 $grey: 			#212121;
 $sky-blue: 		#81DAF5;
 $light-green: 	#daf6cc;
@@ -60,14 +61,10 @@ body {
 	width: 100vw;
 	height: auto;
 
-	background-color: $light-green;
+	background-color: $white;
 
-	// background: url(https://dl.dropboxusercontent.com/s/umm6eiyqwvao5pu/pexels-photo-94438.jpg?dl=0) no-repeat center center fixed; 
-	// background-size: cover;
 
-	@include media-breakpoint-up(sm) {
-  	}
-
+	@include media-breakpoint-up(sm) {}
 
 	}
 	
@@ -86,16 +83,16 @@ h1 {
 	color: $black;
 }
 
-// h2 {
-// 	font-size:3rem;
-// 	color: $black;
-// }
+h2 {
+	font-size:3rem;
+	color: $black;
+}
 
-// h3 {
-	
-// 	font-size:1.5rem;
-// 	color: $black;
-// }
+h3 {
+	font-size:1.5rem;
+	font-weight: 400;
+	color: $black;
+}
 
 // h4 {
 // 	font-size:1rem;
@@ -111,34 +108,58 @@ h1 {
 
 .navigation {
 	position: fixed;
- 	display: block;
- 	width: 100vw;
- 	height: auto;
+	top: 0;
+	left: 0;
+ 	width: 100%;
+ 	height: 64px;
  	z-index: 999;
- 	padding: 2rem;
+ 	//background-color: $black;
 	
 }
 
-.navigation--containter {
-	position: relative;
-	display: block;
+.navigation--bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+ 	height: 64px;
+	background-color: $black;
+	opacity: 0.8;
+	filter: blur(2px);
 
 }
 
-.navigation--containter--items {
+.navigation--containter {
+	height: 100%;
+	z-index: 9;
+}
 
+.navigation--containter--items {
+	height: 100%;
 }
 
 .navigation--containter--items--item {
 	text-align: center;
+	height: 24px;
+	width: 24px;
+	background-repeat: no-repeat;
+	background-position: center center;
+
 	&:first-child {
 		text-align: left;
+		//background-image: url('./assets/images/profile.svg');
 	}
 	&:last-child {
 		text-align: right;
+		background-image: url('./assets/images/profile.svg');
 	}
 }
 
+.navigation--containter--items--item--title {
+	color: $white;
+	z-index: 9;
+
+}
 
 // --------------------------------------
 // Main
@@ -148,8 +169,7 @@ h1 {
 	position: relative;
 	display: block;
 	width: 100vw;
-	height: 100%;
-	padding-top: 44px;
+	height: 100vh;
 }
 
 .main--contianter {
@@ -157,78 +177,108 @@ h1 {
 }
 
 
-// --------------------------------------
-// Logo
-// --------------------------------------
-.logo {
-	position: relative;
-	display: block;
-	width: 100%;
-	text-align: center;
-	padding-top: 3rem;
-}
-
-.logo--continer {
-	
-
-}
-
 
 // --------------------------------------
 // Scanner
 // --------------------------------------
 .scanner {
-	position: relative;
-	display: block;	
-	margin: 0 auto;
-	margin-top: 2rem;
-	
-	width: 80%;
-	// background-image: url('./assets/img/ex-scann.jpg');
-	// background-repeat: no-repeat;
-	// background-size: cover;
-	// background-position: center center;
-	
-	&:after {
-	  content: "";
-	  display: block;
-	  padding-bottom: 100%;
-
-	}
-}
-
-// --------------------------------------
-// Configurator
-// --------------------------------------
-.config {
-	position: relative;
+	position: fixed;
 	display: block;
-	padding: 2rem;
+	z-index: 0;	
+	width: 100%;
+	height: 100%;
+	opacity: 0.3;
+
+	background: url('./assets/images/ex-scann.jpg') no-repeat center center fixed; 
+	background-size: cover;
+	
 }
-
-.config--container {
-	text-align: left
-}
-
-
-
-
 
 // --------------------------------------
 // footer
 // --------------------------------------
 
 .footer {
-	position: fixed;
- 	display: block;
- 	width: 100vw;
- 	bottom: 0;
- 	padding: 1rem;
- 	
+	position: absolute;
+	width: 100vw;
+	height: auto;
+	bottom: 0;
+}
+
+.footer--contianer {
+	
+	width: 100%;
+	height: auto;
+}
+
+.footer--contianer--header{
+	position: relative;
+	width: 100%;
+	height: 60px;
+	z-index: 9;
 
 }
 
-.footer--container {
+.footer--contianer--header--bg {
+		position: absolute;
+		z-index: 8;
+		bottom: 0;
+		width: 100%;
+		height: 60px;		
+		background-color: $white;
+		opacity: 0.8;
+		filter: blur(2px);
+}
 
+.footer--contianer--header--items {
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	z-index: 9;
+	opacity: 1;
+}
+
+.footer--contianer--header--items--item {
+	height: 24px;
+	width: 24px;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	&:first-child {
+		background-image: url('./assets/images/history.svg');
+
+	}
+	&:last-child {
+		background-image: url('./assets/images/filter.svg');	
+	}
+}
+
+.footer--contianer--content {
+	width: 100%;
+	height: auto;	
+}
+
+.footer--contianer--content--history {
+	position: relative;
+	display: none;
+	width: 100%;
+	height: auto;
+}
+
+.footer--contianer--content--filter {
+	position: relative;
+	display: none;
+	width: 100%;
+	height: auto;
 
 }
+
+
+
+
+
+
+
+
+

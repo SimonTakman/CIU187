@@ -1,3 +1,4 @@
+
 //import sayHello from './hello';
 
 /*
@@ -15,6 +16,68 @@ import containingAlergy from './js/filter';
 //generateRandomD3Chart();
 
 //fetchData("05701211012923");
+
+//File loader
+import testScanner from './assets/images/ex-scann.jpg';
+import iconProfile from './assets/images/profile.svg';
+import iconFilter from './assets/images/filter.svg';
+import iconHistory from './assets/images/history.svg';
+
+
+//-------------------------------------------
+// Main Javascript
+// by flowdapro alias the roof maker
+//-------------------------------------------
+
+/*
+
+navigation - ID
+	-> nav-title-text 
+	-> btn-profile
+
+footer - ID
+	-> btn-history
+	-> btn-filter
+
+	
+*/
+
+$('.js-scanner').on('click', function(event) {
+	var $el_h = $('.js-footer--contianer--content--history');
+	var $el_f = $('.js-footer--contianer--content--filter')
+		$el_h.fadeOut('fast');
+		$el_f.fadeOut('fast');	
+});
+
+$('#btn-history').on('click', function(event) {
+	var $el_h = $('.js-footer--contianer--content--history');
+	var $el_f = $('.js-footer--contianer--content--filter')
+		$el_f.fadeOut('fast');
+		$el_h.fadeIn('slow', function() {});
+});
+
+$('#btn-filter').on('click', function(event) {
+	var $el_h = $('.js-footer--contianer--content--history');
+	var $el_f = $('.js-footer--contianer--content--filter')
+		$el_h.fadeOut('fast');
+		$el_f.fadeIn('slow', function() {});
+});
+
+
+
+console.log('********** Event handler loaded *********');
+
+
+
+
+
+
+
+
+
+
+//--------- Ende -------------
+
 
 
 
@@ -79,6 +142,3 @@ function fetchProduct(){
 
 
 //console.log(product);
-
-
-

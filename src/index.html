@@ -23,115 +23,94 @@
     -->
     
 
+    <!-- +++++++++++++++ FLO CODE START +++++++++++++++ -->    
 
     <!-- Navigation -->
     <nav class="navigation">
+      <span class="navigation--bg"></span>
       <div class='navigation--containter container'>
-        <div class="row navigation--containter--items">
-          <div class="navigation--containter--items--item col-3">
-            <p>icon</p>
+        <div class="row align-items-center navigation--containter--items">
+          <div class="col-2 navigation--containter--items--item "></div>
+          <div class="col-8 navigation--containter--items--item">
+            <h3 id="nav-title-text" class="navigation--containter--items--item--title">Example Title</h3>
           </div>  
-          <div class="col-6 navigation--containter--items--item">
-            <p>icon</p>
-          </div>  
-          <div class="col-3 navigation--containter--items--item">
-            <p>icon</p>
-          </div>  
+          <div id="btn-profile" class="col-2 navigation--containter--items--item"></div>  
         </div>
       </div>
     </nav>
-
 
     <!-- Main --> 
     <main class="main" role="main">
      <div class='main--containter'>
 
-      <!-- logo -->
-      <div class="logo">
-        <div class="logo--continer container">
-          <div class="col-12">
-            <h1>LOGO</h1>
-          </div>
-        </div>  
-      </div>
 
       <!-- Scanner -->
-      <!-- <div class="scanner">  
-
-      </div> -->
-
-      <!-- configurator -->
-      <div class="config">
-        <div class="config--container container">
-
-            <h3 >Test page for the Rest API</h1>
-            <p id="test_data1">TestData Jam: 05701211012923</p>
-            <p id="test_data2">TestData Halloumi: 07316150971507</p>
-            <p id="test_data3">TestData Knackisbrot: 07300400116114</p>
-            <p id="test_data4">TestData Chillinötter: 08710532426828</p>
-            
-
-            <div class="checkbox">
-              <label><input id="checkbox_milk" type="checkbox" value="Mjölk">Milk</label>
-            </div>
-            <div class="checkbox">
-              <label><input id="checkbox_meat" type="checkbox" value="Kött">Meat</label>
-            </div>
-            <div class="checkbox">
-              <label><input id="checkbox_roag" type="checkbox" value="Råg">Råg</label>
-            </div>
-            <div class="checkbox">
-              <label><input id="checkbox_peanuts" type="checkbox" value="Jordnötter">Peanuts</label>
-            </div>
-
-
-            <input id="input_test" type="text" name="gtin_field">
-            <button id="submitBtn">Test</button><br>
-            <p id="product_title">Title: </p>
-            <p id="product_image_url">Image URL: </p>
-            <p id="nutri_fact">Nutrision facts: </p>
-            <p id="alergy">Contains Alergy: </p>
-
-
-        </div>
-      </div>
-
-
-
-
-
-
-         <!--  <h1 >Test page for the Rest API</h1>
-          <p id="test_data">TestData: 05701211012923</p>
-          <input id="input_test" type="text" name="gtin_field">
-          <button id="submitBtn">Test</button><br>
-          <p id="product_title">Title: </p>
-          <p id="product_image_url">Image URL: </p>
-          <p id="nutri_fact">Nutrision facts: </p>
-        -->
+      <div class="scanner js-scanner container">  
 
       </div>
-    </main>
 
-
-    <!-- footer -->
-    <!-- <footer class="footer">
-     <div class='footer--containter container'>
-
-      <div class="row">
-        <div class="col">
-          <h3 class="h3">footer item</h3>
-        </div>
-        <div class="col">
-          <h3 class="h3">footer item</h3>
-        </div>
-        <div class="col">
-          <h3 class="h3">footer item</h3>
-        </div>
-      </div>
+      
     </div>
-  </footer>
--->
+  </main>
+
+  <footer class="footer">
+    <div class="footer--contianer">
+      <div class="footer--contianer--header">
+        <span class="footer--contianer--header--bg"></span>
+        <div class="row align-items-center footer--contianer--header--items">
+          <div id="btn-history" class="col-6 footer--contianer--header--items--item"></div>
+          <div id="btn-filter" class="col-6 footer--contianer--header--items--item"></div>
+        </div>
+      </div>
+
+
+      <div class="footer--contianer--content">
+        <div class="footer--contianer--content--history js-footer--contianer--content--history">
+          <!-- Backend code Tester -->
+          <div class="test">
+            <div class="test--container">
+              <h3 >Test page for the Rest API</h1>
+                <p id="test_data1">TestData Jam: 05701211012923</p>
+                <p id="test_data2">TestData Halloumi: 07316150971507</p>
+                <p id="test_data3">TestData Knackisbrot: 07300400116114</p>
+                <p id="test_data4">TestData Chillinötter: 08710532426828</p>
+
+                <div class="checkbox">
+                  <label><input id="checkbox_milk" type="checkbox" value="Mjölk">Milk</label>
+                </div>
+                <div class="checkbox">
+                  <label><input id="checkbox_meat" type="checkbox" value="Kött">Meat</label>
+                </div>
+                <div class="checkbox">
+                  <label><input id="checkbox_roag" type="checkbox" value="Råg">Råg</label>
+                </div>
+                <div class="checkbox">
+                  <label><input id="checkbox_peanuts" type="checkbox" value="Jordnötter">Peanuts</label>
+                </div>
+
+                <input id="input_test" type="text" name="gtin_field">
+                <button id="submitBtn">Test</button><br>
+                <p id="product_title">Title: </p>
+                <p id="product_image_url">Image URL: </p>
+                <p id="nutri_fact">Nutrision facts: </p>
+                <p id="alergy">Contains Alergy: </p>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="footer--contianer--content--filter js-footer--contianer--content--filter">
+            filter content
+          </div>
+        </div>
+
+
+
+
+
+
+      </div>
+    </footer>
 
 
 
@@ -142,11 +121,13 @@
 
 
 
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>  
-<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-</html>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>  
+
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+  </html>
