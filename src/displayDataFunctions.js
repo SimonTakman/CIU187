@@ -1,60 +1,7 @@
+import fetchData from './apiFunctions';
 
-//import sayHello from './hello';
-
-/*
- In order to reach functions in other classes, import them as below.
- Take a look at d3 if you want to load multiple functions into a variable. 
- */
-import './index.scss';
-import startQuagga from './quaggaFunctions';
-import generateRandomD3Chart from './d3Functions';
-import {fetchData, fetchProduct} from './apiFunctions';
-import containingAlergy from './js/filter';
-import startScanner from './barcodeScanner'
-//import parser from 'xml2json';
-//document.getElementById('root').innerHTML =generateRandomD3Chart();
-
-//generateRandomD3Chart();
-
-//fetchData("05701211012923");
-
-
-startScanner();
-document.getElementById("submitBtn").addEventListener("click", fetchProduct);
-
-
-//File loader
-//import model_cow from 'assets/images/ex-scann.jpg';
-
-
-//file raw loader
-//import m_cow from 'raw-loader!./assets/models/cow.dae';
-
-
-/*
-
---> js-infovis
---> js-scanner
-	
-
-
-$('#model_cow').on('load', function(event) {
-	console.log('model loaded.. ');
-});
-
-
-
-
-var product_name = "no product name";
-var product_url = "no product url";
-var product_nutFact = "no product nut facts";
-
-//document.getElementById("checkbox_milk").addEventListener("click", onClick());
-
-document.getElementById("submitBtn").addEventListener("click", fetchProduct);
-
-function fetchProduct(){
-
+export default function fetchProduct(gtin){
+console.log("here i am");
 	//console.log(containingAlergy);
 	var milk = document.getElementById("checkbox_milk");
 	var meat = document.getElementById("checkbox_meat");
@@ -74,7 +21,7 @@ function fetchProduct(){
 
 	console.log(allAllergy)
 
-	let gtin = document.getElementById("input_test").value;
+	//let gtin = document.getElementById("input_test").value;
 	fetchData(gtin).then(function(res){
 		console.log(res.Allergener)
 		console.log(document.getElementById("checkbox_milk").checked);
@@ -101,8 +48,3 @@ function fetchProduct(){
 		});
 	});
 }
-
-
-*/
-
-//console.log(product);
