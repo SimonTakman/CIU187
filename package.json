@@ -58,6 +58,7 @@
   "dependencies": {
     "ar.js": "^1.4.10",
     "d3": "^4.13.0",
-    "quagga": "^0.12.1"
+    "quagga": "^0.12.1",
+    "scandit-sdk": "^1.4.6"
   }
 }
