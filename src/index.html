@@ -22,95 +22,97 @@
       </a-scene>
     -->
     
-
-    <!-- +++++++++++++++ FLO CODE START +++++++++++++++ -->    
-
-    <!-- Navigation -->
-    <nav class="navigation">
-      <span class="navigation--bg"></span>
-      <div class='navigation--containter container'>
-        <div class="row align-items-center navigation--containter--items">
-          <div class="col-2 navigation--containter--items--item "></div>
-          <div class="col-8 navigation--containter--items--item">
-            <h3 id="nav-title-text" class="navigation--containter--items--item--title">Example Title</h3>
-          </div>  
-          <div id="btn-profile" class="col-2 navigation--containter--items--item"></div>  
-        </div>
-      </div>
-    </nav>
-
     <!-- Main --> 
     <main class="main" role="main">
-     <div class='main--containter'>
-
+     <div class='main--containter container'>
 
       <!-- Scanner -->
-      <div class="scanner js-scanner container">  
+      <section class="scanner js-scanner">  
+        <div class="scanner--container container">
+         <h3 >Test page for the Rest API</h1>
+          <p id="test_data1">TestData Jam: 05701211012923</p>
+          <p id="test_data2">TestData Halloumi: 07316150971507</p>
+          <p id="test_data3">TestData Knackisbrot: 07300400116114</p>
+          <p id="test_data4">TestData Chillinötter: 08710532426828</p>
 
-      </div>
+          <div class="checkbox">
+            <label><input id="checkbox_milk" type="checkbox" value="Mjölk">Milk</label>
+          </div>
+          <div class="checkbox">
+            <label><input id="checkbox_meat" type="checkbox" value="Kött">Meat</label>
+          </div>
+          <div class="checkbox">
+            <label><input id="checkbox_roag" type="checkbox" value="Råg">Råg</label>
+          </div>
+          <div class="checkbox">
+            <label><input id="checkbox_peanuts" type="checkbox" value="Jordnötter">Peanuts</label>
+          </div>
+
+          <input id="input_test" type="text" name="gtin_field">
+          <button id="submitBtn">Test</button><br>
+          <p id="product_title">Title: </p>
+          <p id="product_image_url">Image URL: </p>
+          <p id="nutri_fact">Nutrision facts: </p>
+          <p id="alergy">Contains Alergy: </p>
+        </div>
+      </section>
+
+
+      <section class="infovis js-infovis">
+        <div class="infovis--container container">
+          <a-scene background="color: #ECECEC">
+      <a-assets>
+        <!-- put in path in scr from m_cow -->
+        <a-asset-item id="model_cow" src="http://florianwachter.com/dev/dataviz/models/cow.dae"></a-asset-item>
+
+      </a-assets>
+
+      <a-entity id="model" position="0 0 -3">
+        <a-animation attribute="rotation" from="0 -30 0" to="0 330 0" dur="15000"
+                     easing="linear" repeat="indefinite"></a-animation>
+        <a-collada-model position="-.35 0 .55" rotation="0 -20 0" scale="1.5 1.5 1.5"
+                         src="#why-male-models"></a-collada-model>
+        <a-image src="#shadow2" rotation="-90 0 0" scale="0.5 0.5 0.5"></a-image>
+      </a-entity>
+    
+      <a-cylinder id="goggles" color="#101010" height="0.02" radius="0.8">
+        <a-animation attribute="rotation" from="-270 0 0" to="-90 0 0" dur="750" delay="1000"
+                     fill="both"></a-animation>
+        <a-animation attribute="position" from="8 0 -9" to="8 3.5 -9" dur="750" delay="1000"
+                     fill="both"></a-animation>
+        <a-image src="#goggles" width="2" height="1" rotation="90 0 0" position="0 -.05 0"
+                 scale=".4 .4 .4"></a-image>
+      </a-cylinder>
+
+
+      <a-entity>
+        <a-cylinder position="0 0.5 0" radius="4" height="1.6" side="back" open-ended="true"
+                    color="#FFF"></a-cylinder>
+      </a-entity>
+
+      <a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
+      <a-light type="ambient" color="#fff"></a-light>
+    </a-scene>
+
+
+
+
+
+
+
+        </div>
+      </section>
+
+
+
+
+
+
 
       
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="footer--contianer">
-      <div class="footer--contianer--header">
-        <span class="footer--contianer--header--bg"></span>
-        <div class="row align-items-center footer--contianer--header--items">
-          <div id="btn-history" class="col-6 footer--contianer--header--items--item"></div>
-          <div id="btn-filter" class="col-6 footer--contianer--header--items--item"></div>
-        </div>
-      </div>
-
-
-      <div class="footer--contianer--content">
-        <div class="footer--contianer--content--history js-footer--contianer--content--history">
-          <!-- Backend code Tester -->
-          <div class="test">
-            <div class="test--container">
-              <h3 >Test page for the Rest API</h1>
-                <p id="test_data1">TestData Jam: 05701211012923</p>
-                <p id="test_data2">TestData Halloumi: 07316150971507</p>
-                <p id="test_data3">TestData Knackisbrot: 07300400116114</p>
-                <p id="test_data4">TestData Chillinötter: 08710532426828</p>
-
-                <div class="checkbox">
-                  <label><input id="checkbox_milk" type="checkbox" value="Mjölk">Milk</label>
-                </div>
-                <div class="checkbox">
-                  <label><input id="checkbox_meat" type="checkbox" value="Kött">Meat</label>
-                </div>
-                <div class="checkbox">
-                  <label><input id="checkbox_roag" type="checkbox" value="Råg">Råg</label>
-                </div>
-                <div class="checkbox">
-                  <label><input id="checkbox_peanuts" type="checkbox" value="Jordnötter">Peanuts</label>
-                </div>
-
-                <input id="input_test" type="text" name="gtin_field">
-                <button id="submitBtn">Test</button><br>
-                <p id="product_title">Title: </p>
-                <p id="product_image_url">Image URL: </p>
-                <p id="nutri_fact">Nutrision facts: </p>
-                <p id="alergy">Contains Alergy: </p>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="footer--contianer--content--filter js-footer--contianer--content--filter">
-            filter content
-          </div>
-        </div>
-
-
-
-
-
-
-      </div>
-    </footer>
 
 
 
@@ -122,12 +124,13 @@
 
 
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>  
 
-    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
-  </html>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>  
+
+  <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+  <!-- <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -55,6 +55,9 @@ module.exports = {
         } 
       }]
     },{
+        test: /\.dae$/,
+        use: 'raw-loader'
+      },{
         test: /\.scss$/,
         use: extractSass.extract({
             use: [{
