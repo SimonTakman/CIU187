@@ -9,6 +9,7 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
 	var milk = document.getElementById("checkbox_milk");
 	var meat = document.getElementById("checkbox_meat");
 	var roag = document.getElementById("checkbox_roag");
+	var peanuts = document.getElementById("checkbox_peanuts");
 
 	var allergyFilter = [
 		{ "id": milk.checked, 
@@ -16,7 +17,9 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
 		{ "id": meat.checked, 
 			"value": meat.value},
 		{ "id": roag.checked,
-			"value": roag.value}
+			"value": roag.value},
+		{ "id": peanuts.checked,
+			"value": peanuts.value}
 	];
 
 
@@ -45,14 +48,24 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
         if(arr.length === 0){
           document.getElementById("alergy").innerHTML = "Contains Alergy: "+ "NO!";
+          document.getElementById("alergy").setAttribute("style", 'color: green');
         }else{
           document.getElementById("alergy").innerHTML = "Contains Alergy: "+ "YES! " + arr.toString();
+          document.getElementById("alergy").setAttribute("style", "color: red");
         }
         document.getElementById("product_title").innerHTML = "Title: " + res.Artikelbenamning;
         //Need to check if we have an image, otherwise it will not be able to this below.
         document.getElementById("product_image_url").innerHTML = "URL: " + res.Bilder[0].Lank;
         document.getElementById("nutri_fact").innerHTML = "Nutrition facts: " + res.Ingrediensforteckning;
         document.getElementById("mainView").setAttribute("style", "display:none;");
+
+        //document.getElementById("myModal").modal("show");
+
+        //console.log(document.getElementById("myModal").setAttribute('data-toggle', 'modal'));
+
+        //document.getElementById("myModal").modal('show');
+        $("#myModal").modal()
+
         let prodImage = document.createElement("img");
         let aImage = document.createElement("a-image");
         let prodName = document.createElement("a-text");
@@ -85,7 +98,8 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
         aImage.setAttribute("height", "500");
         setTimeout(() => {
           document.getElementById("aScenen").appendChild(canvas);
-          document.getElementById("aFrameView").setAttribute("style", "display:block;");
+          //document.getElementById("aFrameView").setAttribute("style", "display:block;");
+          
         
         }, 1000)
         //document.getElementById("aFrameAssets").appendChild(canvas);
