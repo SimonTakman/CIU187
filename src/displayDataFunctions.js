@@ -1,15 +1,25 @@
 import fetchData from './apiFunctions';
 import startScandit from './barcodeScanner';
 import * as THREE from 'three';
+import parseContent from './parseContent';
+import {vrEnviroment, tjena} from './vrEnviroment';
 
 export default function fetchProduct(gtin){
-console.log("here i am");
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
+	
+	document.getElementById("modal_close_btn").addEventListener("click", function(){
+		document.getElementById("mainView").setAttribute("style", "display:block;");
+	});
+	document.getElementById("modal_enter_vr_btn").addEventListener("click", () => {
+		vrEnviroment(retriveData, retriveAllergies);
+	});
+
 	//console.log(containingAlergy);
 	var milk = document.getElementById("checkbox_milk");
 	var meat = document.getElementById("checkbox_meat");
 	var roag = document.getElementById("checkbox_roag");
 	var peanuts = document.getElementById("checkbox_peanuts");
+	var egg = document.getElementById("checkbox_egg");
 
 	var allergyFilter = [
 		{ "id": milk.checked, 
@@ -19,16 +29,27 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
 		{ "id": roag.checked,
 			"value": roag.value},
 		{ "id": peanuts.checked,
-			"value": peanuts.value}
+			"value": peanuts.value},
+		{ "id": egg.checked,
+			"value": egg.value}
 	];
+
+	var meatObject = ["nötköttsextrakt"];
+
+	var retriveData;
+	var retriveAllergies;
 
 
 	let allAllergy = allergyFilter.filter(a => a.id === true).map(e => e.value);
+	if( allAllergy.filter(a => a === "Kött").length > 0){
+		allAllergy = allAllergy.concat(meatObject);
+	}
 
 	console.log(allAllergy)
 
 	//let gtin = document.getElementById("input_test").value;
 	fetchData(gtin).then(function(res){
+	retriveData = res;
     if(!res.GTIN){
       var snackBar = document.createElement("div");
       snackBar.innerHTML = "The barcode "+ gtin + " does not exist in the database";
@@ -42,9 +63,13 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
       var p = new Promise(function(resolve, reject) {
         setTimeout(() => resolve(4), 1000);
       });
-
       p.then(() => res.Allergener.filter(e => allAllergy.indexOf(e.Allergen) > -1).map(b => b.Allergen)).then(arr => {
-        console.log(arr)
+        
+        var temp = parseContent(res);
+        temp = temp.filter(a => allAllergy.indexOf(a) > -1);
+
+        arr = arr.concat(temp);
+        retriveAllergies = arr;
 
         if(arr.length === 0){
           document.getElementById("alergy").innerHTML = "Contains Alergy: "+ "NO!";
@@ -66,42 +91,6 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
         //document.getElementById("myModal").modal('show');
         $("#myModal").modal()
 
-        let prodImage = document.createElement("img");
-        let aImage = document.createElement("a-image");
-        let prodName = document.createElement("a-text");
-        //TODO: Have some issues with utf-8
-        
-        var loader = new THREE.ImageLoader();
-        let canvas;
-        loader.load(
-          proxyurl + res.Bilder[0].Lank,
-          function (image){
-            canvas = document.createElement('canvas');
-            canvas.setAttribute("width", "1000");
-            canvas.setAttribute("height", "1000");
-            canvas.setAttribute("id", "prod_image") 
-            var context = canvas.getContext('2d');
-            context.drawImage(image, 100, 100);
-          },
-          undefined,
-          function (){
-            console.error("An error happened");
-          }
-        )
-
-
-        prodName.setAttribute("value", res.Artikelbenamning);
-        prodImage.setAttribute("id", "product_image");
-        prodImage.setAttribute("src", proxyurl + res.Bilder[0].Lank);
-        aImage.setAttribute("src", "#prod_image");
-        aImage.setAttribute("width", "500");
-        aImage.setAttribute("height", "500");
-        setTimeout(() => {
-          document.getElementById("aScenen").appendChild(canvas);
-          //document.getElementById("aFrameView").setAttribute("style", "display:block;");
-          
-        
-        }, 1000)
         //document.getElementById("aFrameAssets").appendChild(canvas);
         //document.getElementById("aScenen").appendChild(prodName);
         
@@ -113,4 +102,5 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
       });
     }
 	});
+
 }
