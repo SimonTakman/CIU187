@@ -123,7 +123,6 @@
               <div class="modal-body">
                 <!-- <p>Some text in the modal.</p> -->
                 <h2 id="product_title"></h2>
-                <p id="product_image_url">Image URL: </p>
                 <p id="nutri_fact">Nutrision facts: </p>
                 <h3 id="alergy">Contains Alergy: </h3>
               </div>
@@ -147,6 +146,12 @@
         <!-- put in path in scr from m_cow -->
               <!--<a-asset-item id="model_cow" src="https://cors-anywhere.herokuapp.com/http://florianwachter.com/dev/dataviz/models/cow.dae"></a-asset-item> -->
             </a-assets>
+            <a-cylinder position="0 0.5 -4" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
+            <a-plane position="0 0.5 0" rotation="-90 0 0" width="11" height="11" color="#7BC8A4" shadow></a-plane>
+            <a-cylinder position="0 0.5 0" radius="5" height="1.6" side="back" open-ended="true"
+                    color="#FFF"></a-cylinder>
+            <a-sky color="#ECECEC"></a-sky>
+
       <!--<a-entity id="model" position="0 0 -3"> -->
         <!-- <a-collada-model position="-.35 0 .55" rotation="0 -20 0" scale="1.5 1.5 1.5"
                          src="#model_cow"></a-collada-model> -->

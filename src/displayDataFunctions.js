@@ -80,7 +80,6 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
         }
         document.getElementById("product_title").innerHTML = "Title: " + res.Artikelbenamning;
         //Need to check if we have an image, otherwise it will not be able to this below.
-        document.getElementById("product_image_url").innerHTML = "URL: " + res.Bilder[0].Lank;
         document.getElementById("nutri_fact").innerHTML = "Nutrition facts: " + res.Ingrediensforteckning;
         document.getElementById("mainView").setAttribute("style", "display:none;");
 
@@ -89,7 +88,7 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
         //console.log(document.getElementById("myModal").setAttribute('data-toggle', 'modal'));
 
         //document.getElementById("myModal").modal('show');
-        $("#myModal").modal()
+        $("#myModal").modal();
 
         //document.getElementById("aFrameAssets").appendChild(canvas);
         //document.getElementById("aScenen").appendChild(prodName);
