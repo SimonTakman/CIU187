@@ -2,18 +2,23 @@
 import {calculateAmount} from './calculateAmount';
 
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
+var dataObject;
+var allergiesObject;
 
 export function vrEnviroment(data, allergies){
 		console.log(data);
 		console.log(allergies);
 
-    calculateAmount(data);
+    //calculateAmount(data);
+
+    dataObject = data;
+    allergiesObject = allergies;
 
 		
 		
 		//let prodImage = document.createElement("img");
         //let aImage = document.createElement("a-image");
-        let prodName = document.createElement("a-text");
+        
         /*
         let asset = document.createElement("a-asset-item");
         let newAsset = document.createElement("a-asset-item");
@@ -48,14 +53,6 @@ export function vrEnviroment(data, allergies){
             console.error("An error happened");
           }
         )*/
-
-
-        prodName.setAttribute("value", data.Artikelbenamning);
-        var pos = "-4.5 5 -10";
-        var prod_scale = "10 10 10"
-        prodName.setAttribute("scale", prod_scale)
-        prodName.setAttribute("position", pos);
-        prodName.setAttribute("color", "black")
         //document.getElementById("aFrameAssets").appendChild(asset);
         //document.getElementById("aFrameAssets").appendChild(newAsset);
         //prodImage.setAttribute("id", "product_image");
@@ -65,7 +62,6 @@ export function vrEnviroment(data, allergies){
         //aImage.setAttribute("height", "500");
         appendAframeElements(allergies);
         setTimeout(() => {
-          document.getElementById("aScenen").appendChild(prodName);
           //document.getElementById("aScenen").appendChild(aModel);
           //document.getElementById("aScenen").appendChild(aModel2);
           document.getElementById("aFrameView").setAttribute("style", "display:block;");
@@ -80,9 +76,59 @@ function appendAframeElements (allergyArray){
   let assetsArray = allergyArray.map(x => getElementAsAnAsset(x)).filter(y => y !== null).map(z => document.getElementById("aFrameAssets").appendChild(z));
   allergyArray = allergyArray.map(x => getElementAsAModel(x)).filter(y => y !== null).map(z => document.getElementById("aScenen").appendChild(z));
   createBoxes(allergyArray);
-  console.log(allergyArray);  
+  generateInfoText(allergyArray); 
+  generateHeader();
+  //createModelText(allergiesObject);
 
 }
+
+function generateInfoText(el){
+  if(el.length === 0){
+    let infoText = document.createElement("a-text");
+    infoText.setAttribute("value", "This product will be safe to eat!");
+    var infoText_pos = "-5 5 -10";
+    var infoText_scale = "3 3 3"
+    infoText.setAttribute("scale", infoText_scale)
+    infoText.setAttribute("position", infoText_pos);
+    infoText.setAttribute("color", "green");
+    document.getElementById("aScenen").appendChild(infoText);
+  }else{
+    let infoText = document.createElement("a-text");
+    infoText.setAttribute("value", "This product will not be safe to eat!");
+    var infoText_pos = "-5 5 -10";
+    var infoText_scale = "3 3 3"
+    infoText.setAttribute("scale", infoText_scale)
+    infoText.setAttribute("position", infoText_pos);
+    infoText.setAttribute("color", "red");
+    document.getElementById("aScenen").appendChild(infoText);
+  }; 
+};
+
+function generateHeader(){
+  let prodName = document.createElement("a-text");
+  prodName.setAttribute("value", dataObject.Varumarke.Varumarke + ": " + dataObject.Artikelbenamning);
+  var pos = "-9 8 -10";
+  var prod_scale = "10 10 10"
+  prodName.setAttribute("scale", prod_scale)
+  prodName.setAttribute("position", pos);
+  prodName.setAttribute("color", "black");
+  document.getElementById("aScenen").appendChild(prodName);
+};
+
+function createModelText(el){
+  if(el.length !== 0){
+    for(var i = 0; i < el.length; i++){
+      let modelText = document.createElement("a-text");
+      var z = 3 - i;
+      var mt_pos = i + " 1.5 -" + z;
+      modelText.setAttribute("value", el[i]);
+      modelText.setAttribute("position", mt_pos);
+      modelText.setAttribute("color", "black");
+      document.getElementById("aScenen").appendChild(modelText);
+
+    }
+  }
+};
 
 function getElementAsAnAsset (allergyItem){
   let aAssetItem;

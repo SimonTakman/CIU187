@@ -49,6 +49,7 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
 	//let gtin = document.getElementById("input_test").value;
 	fetchData(gtin).then(function(res){
+	console.log(res);
 	retriveData = res;
     if(!res.GTIN){
       var snackBar = document.createElement("div");
@@ -72,15 +73,15 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
         retriveAllergies = arr;
 
         if(arr.length === 0){
-          document.getElementById("alergy").innerHTML = "Contains Alergy: "+ "NO!";
+          document.getElementById("alergy").innerHTML = "This product is safe!";
           document.getElementById("alergy").setAttribute("style", 'color: green');
         }else{
-          document.getElementById("alergy").innerHTML = "Contains Alergy: "+ "YES! " + arr.toString();
+          document.getElementById("alergy").innerHTML = "This product contains: " + arr.toString();
           document.getElementById("alergy").setAttribute("style", "color: red");
         }
         document.getElementById("product_title").innerHTML = "Title: " + res.Artikelbenamning;
         //Need to check if we have an image, otherwise it will not be able to this below.
-        document.getElementById("nutri_fact").innerHTML = "Nutrition facts: " + res.Ingrediensforteckning;
+        document.getElementById("nutri_fact").innerHTML = "Ingredients: " + res.Ingrediensforteckning;
         document.getElementById("mainView").setAttribute("style", "display:none;");
 
         //document.getElementById("myModal").modal("show");
