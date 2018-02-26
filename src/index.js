@@ -8,9 +8,10 @@
 import './index.scss';
 import startQuagga from './quaggaFunctions';
 import generateRandomD3Chart from './d3Functions';
-import {fetchData, fetchProduct} from './apiFunctions';
+//import {fetchData, fetchProduct} from './apiFunctions';
 import containingAlergy from './js/filter';
-import startScandit from './barcodeScanner'
+import startScandit from './barcodeScanner';
+import fetchProduct from './displayDataFunctions'
 //import parser from 'xml2json';
 //document.getElementById('root').innerHTML =generateRandomD3Chart();
 
@@ -21,7 +22,12 @@ import startScandit from './barcodeScanner'
 
 //startScandit();
 document.getElementById("submitBtn").addEventListener("click", startScandit);
+document.getElementById("submitBtn2").addEventListener("click", manualEnter);
 
+
+function manualEnter(){
+	fetchProduct(document.getElementById("manual input").value);
+}
 
 //File loader
 //import model_cow from 'assets/images/ex-scann.jpg';
