@@ -60,7 +60,7 @@ export function vrEnviroment(data, allergies){
         //aImage.setAttribute("src", "#prod_image");
         //aImage.setAttribute("width", "500");
         //aImage.setAttribute("height", "500");
-        appendAframeElements(allergies);
+        appendAframeElements(allergies, data);
         setTimeout(() => {
           //document.getElementById("aScenen").appendChild(aModel);
           //document.getElementById("aScenen").appendChild(aModel2);
@@ -72,15 +72,48 @@ export function vrEnviroment(data, allergies){
   }
   
 
-function appendAframeElements (allergyArray){
+function appendAframeElements (allergyArray, data){
   let assetsArray = allergyArray.map(x => getElementAsAnAsset(x)).filter(y => y !== null).map(z => document.getElementById("aFrameAssets").appendChild(z));
   allergyArray = allergyArray.map(x => getElementAsAModel(x)).filter(y => y !== null).map(z => document.getElementById("aScenen").appendChild(z));
   createBoxes(allergyArray);
   generateInfoText(allergyArray); 
   generateHeader();
+  if(data.Naringsinfo[0].Naringsvarden !== null){
+    generateNutritionFacts(data.Naringsinfo[0].Naringsvarden);
+  }
   //createModelText(allergiesObject);
 
 }
+
+function generateNutritionFacts(data){
+  console.log(data);
+  let protein = data.filter(x => x.Kod === "PRO-");
+  console.log(protein);
+  let carbs = data.filter(x => x.Kod === "CHOAVL");
+  let fat = data.filter(x => x.Kod === "FAT");
+  if(protein.length > 0 && carbs.length > 0 && fat.length > 0){
+    let gymIndex = protein[0].Mangd / (carbs[0].Mangd + fat[0].Mangd);
+    console.log(gymIndex);
+    let gymCylinder = document.createElement("a-cylinder");
+    let yVal = (gymIndex*20);
+    let pos = "4.4 " + yVal/2 + " 0"
+    gymCylinder.setAttribute("position", pos);
+    gymCylinder.setAttribute("radius", "0.5");
+    gymCylinder.setAttribute("height", yVal);
+    gymCylinder.setAttribute("color", "#0000FF");
+    document.getElementById("aScenen").appendChild(gymCylinder);
+    let gymText = document.createElement("a-text");
+    gymText.setAttribute("value", "Gym value");
+    let gymText_pos = "4.4 1 1";
+    //let gymText_scale = "3 3 3"
+    //gymText.setAttribute("scale", gymText_scale)
+    gymText.setAttribute("position", gymText_pos);
+    gymText.setAttribute("rotation", "0 270 1");
+    gymText.setAttribute("color", "red");
+    document.getElementById("aScenen").appendChild(gymText);
+  }
+}
+
 
 function generateInfoText(el){
   if(el.length === 0){
