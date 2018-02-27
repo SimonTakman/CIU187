@@ -84,8 +84,60 @@ function appendAframeElements (allergyArray, data){
   if(data.Naringsinfo[0].Naringsvarden !== null){
     generateNutritionFacts(data.Naringsinfo[0].Naringsvarden);
   }
+  generateHowToCook();  
   //createModelText(allergiesObject);
 
+}
+
+function generateHowToCook(){
+  console.log(allergiesObject);
+  if(allergiesObject.length === 0){
+
+    let ht = document.createElement("a-plane");
+    let tht = document.createElement("a-text");
+    let tht_data = document.createElement("a-text");
+
+    var ht_pos = "0 1.6 -4";
+
+    ht.setAttribute("position", ht_pos);
+    ht.setAttribute("rotation", "0 0 0");
+    ht.setAttribute("width", "4");
+    ht.setAttribute("height", "2");
+    ht.setAttribute("color", "black");
+
+    var tht_pos = "-0.7 2.4 -3.99";
+
+    tht.setAttribute("scale", "1 1 1")
+    tht.setAttribute("position", tht_pos);
+    tht.setAttribute("color", "white");
+    tht.setAttribute("value", "How to cook");
+
+    var tht_pos_data = "-1.5 1.5 -3.99";
+
+    tht_data.setAttribute("scale", "0.75 0.75 0.75")
+    tht_data.setAttribute("position", tht_pos_data);
+    tht_data.setAttribute("color", "white");
+    console.log(dataObject)
+    //console.log(dataObject.Tillagningsinformation.length)
+
+    if(dataObject.Tillagningsinformation.length !== 0){
+      console.log(dataObject.Tillagningsinformation[0].Anvisning)
+      if(dataObject.Tillagningsinformation[0].Anvisning !== null){
+        tht_data.setAttribute("value", dataObject.Tillagningsinformation[0].Anvisning);
+      }else{
+        tht_data.setAttribute("value", "No data found on how to cook")
+      }
+    }else{
+      tht_data.setAttribute("value", "No data found on how to cook");
+    }
+    document.getElementById("aScenen").appendChild(ht);
+    document.getElementById("aScenen").appendChild(tht);
+    document.getElementById("aScenen").appendChild(tht_data);
+  }
+  
+
+
+  //position="0 0.5 0" rotation="-90 0 0" width="11" height="11" color="#7BC8A4" shadow
 }
 
 function generateNutritionFacts(data){
