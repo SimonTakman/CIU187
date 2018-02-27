@@ -5,6 +5,9 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
 var dataObject;
 var allergiesObject;
 
+var xPos = 0;
+var zPos = 4;
+
 export function vrEnviroment(data, allergies){
 		console.log(data);
 		console.log(allergies);
@@ -228,8 +231,11 @@ function getElementAsAModel(allergyItem){
         animation.setAttribute("easing", "linear");
         let aModel = document.createElement("a-collada-model");
         aModel.setAttribute("src", "#meat");
-        var pos1 = "0 1.5 -4";
+        //var pos1 = "0 1.5 -4";
+        var pos1 = xPos + " 1.5 " + "-" + zPos;
         aModel.setAttribute("position", pos1);
+        xPos = xPos +1;
+        zPos = zPos - 0.5;
         var scl1 = "0.1 0.1 0.1";
         aModel.setAttribute("scale", scl1);
         aModel.appendChild(animation);
@@ -265,7 +271,9 @@ function getElementAsAModel(allergyItem){
         animation2.setAttribute("easing", "linear");
         let aModel2 = document.createElement("a-collada-model");
         aModel2.setAttribute("src", "#egg");
-        var pos2 = "1 1.75 -3.5";
+        var pos2 = xPos + " 1.75 " + "-" + zPos;
+        xPos = xPos + 1;
+        zPos = zPos - 0.5;
         aModel2.setAttribute("position", pos2);
         var scl2 = "0.2 0.2 0.2";
         aModel2.setAttribute("scale", scl2);
