@@ -158,7 +158,8 @@ function generateNutritionFacts(data){
     gymCylinder.setAttribute("color", "#0000FF");
     document.getElementById("aScenen").appendChild(gymCylinder);
     let gymText = document.createElement("a-text");
-    gymText.setAttribute("value", "Gym value");
+    let gymTextValue = "Gym Value:\n" + gymIndex;
+    gymText.setAttribute("value", gymTextValue);
     let gymText_pos = "4.4 1 1";
     //let gymText_scale = "3 3 3"
     //gymText.setAttribute("scale", gymText_scale)
@@ -168,7 +169,6 @@ function generateNutritionFacts(data){
     document.getElementById("aScenen").appendChild(gymText);
   }
 }
-
 
 function generateInfoText(el){
   if(el.length === 0){
