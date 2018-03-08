@@ -1,58 +1,48 @@
-# Webpack ES6 boilerplatee
+# CIU187 - Group 11
 
-[![tests][tests]][tests-url]
-[![coverage][cover]][cover-url]
+A minimalistic foodscanner useful for people with food preferences/allergies.
 
-A minimalistic Webpack 2 ES6 boilerplate project.
 
-## Prerequisites
+## Group Members
 
-[![node][node]][node-url]
-[![npm][npm]][npm-url]
-      
-- [Node.js](http://es6-features.org)
+- Carl Albertsson
+- Carl Lindvall
+- Florian Wachter
+- Pontus Åberg
+- Simon Larsson Takman
 
-## Features
+## Frameworks
 
-- [Webpack](https://webpack.js.org/guides) (v3.5.5)
-    - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server) (v2.7.1)
-    - [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement)
-    - [Clean Webpack Plugin](https://github.com/johnagan/clean-webpack-plugin) (v0.1.16)
-- [ECMAScript 6](http://es6-features.org)
-- [Babel](https://babeljs.io/docs/setup/#installation) (v6.26.0)
-- [ESLint](https://eslint.org/docs/user-guide/getting-started) (v4.5.0)
-- [Jest](https://facebook.github.io/jest/docs/en/getting-started.html) (v20.0.4)
-- [Sass](http://sass-lang.com/guide)
+- Scandit (Barcode Scanner)
+- A-Frame (VR-environment)
+- DABAS (Database of Swedish food barcodes)
+- Bootstrap 3.0 (CSS elements)
 
 ## Start Dev Server
 
-1. `git clone https://github.com/jluccisano/webpack-es6-boilerplate.git`
-2. Run `npm install`
-3. Start the dev server using `npm start`
+1. Run `npm install`
+2. Start the dev server using `npm start`
 3. Open [http://localhost:9000](http://localhost:9000)
 
+## License
 
-## Commands
+MIT LICENSE:
+Copyright (c) 2018 Group 11
 
-- `npm start` - start the dev server
-- `npm run build` - create build in `dist` folder
-- `npm run lint` - run an ESLint check
-- `npm run coverage` - run code coverage and generate report in the `coverage` folder
-- `npm test` - run all tests
-- `npm run test:watch` - run all tests in watch mode
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Licence
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-_webpack-es6-boilerplate_ is available under MIT.
-
-[npm]: https://img.shields.io/badge/npm-5.3.0-blue.svg
-[npm-url]: https://npmjs.com/
-
-[node]: https://img.shields.io/node/v/webpack-es6-boilerplate.svg
-[node-url]: https://nodejs.org
-
-[tests]: http://img.shields.io/travis/jluccisano/webpack-es6-boilerplate.svg
-[tests-url]: https://travis-ci.org/jluccisano/webpack-es6-boilerplate
-
-[cover]: https://codecov.io/gh/jluccisano/webpack-es6-boilerplate/branch/master/graph/badge.svg
-[cover-url]: https://codecov.io/gh/jluccisano/webpack-es6-boilerplate
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
