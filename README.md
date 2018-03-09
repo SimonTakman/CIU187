@@ -24,6 +24,35 @@ A minimalistic foodscanner useful for people with food preferences/allergies.
 2. Start the dev server using `npm start`
 3. Open [http://localhost:9000](http://localhost:9000)
 
+## Code Structure
+In the allergyFilter object we define the different filters that are available for the moment.
+#### src/displayDataFunctions.js
+```javascript
+var allergyFilter = [
+		{ "id": milk.checked, 
+			"value": milk.value},
+		{ "id": meat.checked, 
+			"value": meat.value},
+		{ "id": roag.checked,
+			"value": roag.value},
+		{ "id": peanuts.checked,
+			"value": peanuts.value},
+		{ "id": egg.checked,
+			"value": egg.value}
+	];
+```
+Below is an example if you want to add more keywords to a filter.
+#### src/displayDataFunctions.js
+```javascript
+var meatObject = ["nötköttsextrakt"]; 
+let allAllergy = allergyFilter.filter(a => a.id === true).map(e => e.value);
+// "Kött" is the value from allergyFilter[1].value (the value of meat filter)
+if(allAllergy.filter(a => a === "Kött").length > 0){
+	allAllergy = allAllergy.concat(meatObject);
+}
+```
+
+
 ## License
 
 MIT LICENSE:
